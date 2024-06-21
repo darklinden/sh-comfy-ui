@@ -76,6 +76,7 @@ pip install -r requirements.txt
 
 # 下载 InstantID/ControlNetModel 中的 config.json 和 diffusion_pytorch_model.safetensors ，
 # 将模型地址填入 📷ID ControlNet Loader 节点中（例如：ComfyUI/custom_nodes/ComfyUI-InstantID/checkpoints/controlnet
+mkdir -p $SCRIPT_DIR/ComfyUI/custom_nodes/ComfyUI-InstantID/checkpoints/controlnet
 wget -c https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/config.json?download=true \
     -O $SCRIPT_DIR/ComfyUI/custom_nodes/ComfyUI-InstantID/checkpoints/controlnet/config.json
 wget -c https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors?download=true \
@@ -88,6 +89,7 @@ wget -c https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin?do
 
 # 下载 DIAMONIK7777/antelopev2 中的所有模型，
 # 将其放入 ComfyUI//custom_nodes/ComfyUI-InstantID/models/antelopev2 中
+mkdir -p $SCRIPT_DIR/ComfyUI/custom_nodes/ComfyUI-InstantID/models/antelopev2
 wget -c https://huggingface.co/DIAMONIK7777/antelopev2/resolve/main/1k3d68.onnx?download=true \
     -O $SCRIPT_DIR/ComfyUI/custom_nodes/ComfyUI-InstantID/models/antelopev2/1k3d68.onnx
 wget -c https://huggingface.co/DIAMONIK7777/antelopev2/resolve/main/2d106det.onnx?download=true \
