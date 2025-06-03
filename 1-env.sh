@@ -64,6 +64,15 @@ fi
 cd $SCRIPT_DIR/ComfyUI || exit
 
 pip install torch torchvision torchaudio
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "Detected macOS, setting libs and aliases"
+    alias nproc="sysctl -n hw.logicalcpu"
+    brew install pkg-config cmake sentencepiece protobuf
+else
+    echo "Not macOS, no need to set nproc alias"
+fi
+
 pip install -r requirements.txt
 
 # add plugin for https://github.com/ZHO-ZHO-ZHO/ComfyUI-InstantID
