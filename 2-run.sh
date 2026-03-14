@@ -62,4 +62,4 @@ fi
 
 cd $SCRIPT_DIR/ComfyUI || exit
 
-python main.py
+python main.py --listen --port 38188
